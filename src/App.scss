@@ -1,0 +1,80 @@
+.todoTemplate{
+	width: 512px;
+	// width가 주어진 상태에서 좌우 중앙 정렬
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6rem;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #1d284e;;
+	.app-title{
+		background: #1d284e;
+		color: #fff;
+		height: 4rem;
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.add-list{
+		background: #f2f2f2;
+		color:#fff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		input{
+			padding: 10px 15px;
+			width: 90%;
+			background: none;
+			border: 0;
+			color: #1d284e;
+			&:focus{
+				border: 0;
+				outline: none;
+			}
+		}
+		button{
+			// 기본 스타일 초기화
+			background: none;
+			outline: none;
+			border: none;
+			background: #868e96;
+			color: white;
+			padding: 10px 15px;
+			font-size: 1.5rem;
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			transition: 0.1s background ease-in;
+			&:hover {
+			  background: #adb5bd;
+			}
+		}
+
+	}
+	.content{
+		background: #fff;
+		.total{
+			background: #eef1ff;
+			text-align: right;
+			padding: 15px;
+			border-top:1px solid #999;
+		}
+		.todoList{
+			.item{
+				border-top:1px solid #999;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 10px 15px;
+				font-size:13px;
+				input:checked +{
+					span{
+						color:#999;
+						text-decoration: line-through;
+					}
+				}
+			}
+		}
+	}
+}
