@@ -1,16 +1,21 @@
 /* eslint-disable */
 
-import React from 'react';
+import { useState } from 'react';
 import './TodoListItem.scss';
 
 //TodoListItem 
 function TodoListItem(props){
+	let [bChecked,setBChecked] = useState(false);
 	return(
 		<div className='TodoListItem'>
 			<label>
 				<input type='checkbox' />
-				<span>{props.item}</span>
-				{/* <span>{props.items[props.i]}</span> */}
+				{/* <input type='checkbox' checked={bChecked} onChange={(e)=> {
+					setBChecked(e.target.value);
+				}}
+				/> */}
+				{/* <span>{props.item}</span> */}
+				<span>{props.items[props.i].text}</span>
 			</label>
 			<button onClick={()=>{
 				let copy = [...props.items];

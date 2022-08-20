@@ -1,16 +1,16 @@
 /* eslint-disable */
-
-import React from 'react';
+import { useState } from 'react';
 import { MdAdd } from 'react-icons/md';
 import './TodoInsert.scss';
 
 //TodoInsert
 function TodoInsert(props){
+	let [inputItem, setInputItem] = useState('');
 	function publish(){
 		let copy = [...props.items];
-		copy.unshift(props.inputItem);
+		copy.unshift({text : inputItem,checked : false});
 		props.setItems(copy);
-		props.setInputItem(''); //input
+		setInputItem(''); //input
 	}
 	function text(){
 		alert('할 일을 입력하세요');
@@ -18,11 +18,11 @@ function TodoInsert(props){
 
 	return(
 		<div className='TodoInsert'>
-			<input type='text' value={props.inputItem} placeholder='할 일을 입력하세요' onChange={(e)=>{ 
-				props.setInputItem(e.target.value)
+			<input type='text' value={inputItem} placeholder='할 일을 입력하세요' onChange={(e)=>{ 
+				setInputItem(e.target.value)
 			}} />
 			<button onClick={()=>{
-				props.inputItem != '' ? publish() : text();
+				inputItem != '' ? publish() : text();
 				}}>
 				<MdAdd></MdAdd>
 			</button>
