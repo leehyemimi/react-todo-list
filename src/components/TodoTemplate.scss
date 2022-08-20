@@ -1,10 +1,13 @@
 .todoTemplate{
 	width: 512px;
-	margin:6rem auto 0;
+	// width가 주어진 상태에서 좌우 중앙 정렬
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6rem;
 	border-radius: 4px;
 	overflow: hidden;
 	border: 1px solid #1d284e;;
-	.todoTemplateTitle{
+	.app-title{
 		background: #1d284e;
 		color: #fff;
 		height: 4rem;
@@ -13,6 +16,7 @@
 		align-items: center;
 		justify-content: center;
 	}
+	
 	.content{
 		background: #fff;
 		.total{
@@ -20,22 +24,6 @@
 			text-align: right;
 			padding: 15px;
 			border-top:1px solid #999;
-		}
-		.todoList{
-			.item{
-				border-top:1px solid #999;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				padding: 10px 15px;
-				font-size:13px;
-				input:checked +{
-					span{
-						color:#999;
-						text-decoration: line-through;
-					}
-				}
-			}
 		}
 	}
 }

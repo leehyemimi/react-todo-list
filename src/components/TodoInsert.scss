@@ -1,0 +1,35 @@
+.TodoInsert{
+	background: #f2f2f2;
+	color:#fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	input{
+		padding: 10px 15px;
+		width: 90%;
+		background: none;
+		border: 0;
+		color: #1d284e;
+		&:focus{
+			border: 0;
+			outline: none;
+		}
+	}
+	button{
+		// 기본 스타일 초기화
+		background: none;
+		outline: none;
+		border: none;
+		background: #868e96;
+		color: white;
+		padding: 10px 15px;
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		transition: 0.1s background ease-in;
+		&:hover {
+			background: #adb5bd;
+		}
+	}
+}
