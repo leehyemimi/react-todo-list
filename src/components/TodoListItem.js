@@ -4,23 +4,23 @@ import { useState } from 'react';
 import './TodoListItem.scss';
 
 //TodoListItem 
-function TodoListItem(props){
-	let [bChecked,setBChecked] = useState(false);
+function TodoListItem({items,setItems,i,onInsert}){
 	return(
 		<div className='TodoListItem'>
 			<label>
-				<input type='checkbox' />
-				{/* <input type='checkbox' checked={bChecked} onChange={(e)=> {
-					setBChecked(e.target.value);
-				}}
-				/> */}
-				{/* <span>{props.item}</span> */}
-				<span>{props.items[props.i].text}</span>
+				<input type='checkbox' checked={items[i].checked} onChange={(e)=> {
+					let copy = [...items];
+					copy[i].checked = e.target.checked;
+					setItems(copy);
+					}}
+				/>
+				<span>{items[i].text}</span>
 			</label>
 			<button onClick={()=>{
-				let copy = [...props.items];
-				copy.splice(props.i,1);
-				props.setItems(copy);
+				let copy = [...items];
+				copy.splice(i,1);
+				setItems(copy);
+				//onInsert(inputItem);
 			}}>삭제</button>
 		</div>
 	)

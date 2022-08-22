@@ -5,13 +5,13 @@ import TodoListItem from './TodoListItem';
 import './TodoList.scss';
 
 //TodoList
-function TodoList(props){
+function TodoList({items,setItems}){
 	return (
 		<div className='todoList'>
 			{
-				props.items.map(function(item,i){
+				items.map(function(item,i){
 					return (
-						<TodoListItem key={i} setItems={props.setItems} items={props.items} item={item} i={i}/>
+						<TodoListItem key={i} setItems={setItems} items={items} item={item} i={i}/>
 					);
 				})
 			}
