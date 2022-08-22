@@ -1,27 +1,28 @@
 /* eslint-disable */
 
-import { useState } from 'react';
+import React from 'react';
 import './TodoListItem.scss';
 
 //TodoListItem 
-function TodoListItem({items,setItems,i,onInsert}){
+function TodoListItem({items,setItems,i}){
+	function onChangeCheck(e){
+		let copy = [...items];
+		copy[i].checked = e.target.checked;
+		setItems(copy);
+	}
+	function del(){
+		let copy = [...items];
+		copy.splice(i,1);
+		setItems(copy);
+	}
+	
 	return(
 		<div className='TodoListItem'>
 			<label>
-				<input type='checkbox' checked={items[i].checked} onChange={(e)=> {
-					let copy = [...items];
-					copy[i].checked = e.target.checked;
-					setItems(copy);
-					}}
-				/>
+				<input type='checkbox' checked={items[i].checked} onChange={onChangeCheck} />
 				<span>{items[i].text}</span>
 			</label>
-			<button onClick={()=>{
-				let copy = [...items];
-				copy.splice(i,1);
-				setItems(copy);
-				//onInsert(inputItem);
-			}}>삭제</button>
+			<button onClick={del}>삭제</button>
 		</div>
 	)
 };

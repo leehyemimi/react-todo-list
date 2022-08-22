@@ -8,7 +8,7 @@ import data from './components/data'
 import './App.scss';
 
 function App() {
-	let [items, setItems] = useState(data);
+	const [items, setItems] = useState(data);
 
 	//고유값으로 사용될 id
 	// redf를 사용하여 변수 담기
@@ -28,7 +28,7 @@ function App() {
 
 	return (
 		<TodoTemplate>
-			<TodoInsert items={items} setItems={setItems} onInsert={onInsert} />
+			<TodoInsert onInsert={onInsert} />
 			<TodoList items={items} setItems={setItems}/>
 		</TodoTemplate>
 	);
