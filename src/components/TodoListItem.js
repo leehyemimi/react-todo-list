@@ -4,19 +4,19 @@ import React from 'react';
 import './TodoListItem.scss';
 
 //TodoListItem 
-function TodoListItem({items,setItems,i}){
-	function onChangeCheck(e){
+function TodoListItem({ items, setItems, i }) {
+	function onChangeCheck(e) {
 		let copy = [...items];
 		copy[i].checked = e.target.checked;
 		setItems(copy);
 	}
-	function del(){
+	function del() {
 		let copy = [...items];
-		copy.splice(i,1);
+		copy.splice(i, 1);
 		setItems(copy);
 	}
-	
-	return(
+
+	return (
 		<div className='TodoListItem'>
 			<label>
 				<input type='checkbox' checked={items[i].checked} onChange={onChangeCheck} />

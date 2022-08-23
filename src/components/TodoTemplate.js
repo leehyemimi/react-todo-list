@@ -5,10 +5,10 @@ import './TodoTemplate.scss';
 
 
 //TodoTemplate
-function TodoTemplate({children}){
-	return(
+function TodoTemplate({ children }) {
+	return (
 		<div className='todoTemplate'>
-			<div className='todoTemplateTitle'>일정 관리3</div>
+			<div className='todoTemplateTitle'>일정 관리</div>
 			<div className='content'>
 				{children}
 			</div>
