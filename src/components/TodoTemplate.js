@@ -8,7 +8,7 @@ import './TodoTemplate.scss';
 function TodoTemplate({children}){
 	return(
 		<div className='todoTemplate'>
-			<div className='todoTemplateTitle'>일정 관리2</div>
+			<div className='todoTemplateTitle'>일정 관리3</div>
 			<div className='content'>
 				{children}
 			</div>
