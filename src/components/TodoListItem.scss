@@ -1,13 +1,13 @@
-.TodoListItem{
-	border-top:1px solid #999;
+.TodoListItem {
+	border-top: 1px solid #eee;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 15px;
-	font-size:13px;
-	input:checked +{
-		span{
-			color:#999;
+	font-size: 13px;
+	input:checked + {
+		span {
+			color: #999;
 			text-decoration: line-through;
 		}
 	}

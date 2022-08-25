@@ -13,6 +13,7 @@ function TodoListItem({ items, setItems, i }) {
 	function del() {
 		let copy = [...items];
 		copy.splice(i, 1);
+		copy[i].checked = copy[i].checked;
 		setItems(copy);
 	}
 
