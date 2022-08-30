@@ -27,11 +27,29 @@ function App() {
 		[items],
 	);
 
+	const onRemove = useCallback(
+		id => {
+			setItems(items.filter(item => item.id !== id));
+		},
+		[items],
+	);
+
+	const onToggle = useCallback(
+		id => {
+			setItems(
+				items.map(item =>
+					item.id === id ? { ...item, checked: !item.checked } : item,
+				),
+			);
+		},
+		[items],
+	);
+
 	return (
 		<TodoTemplate>
 			<div className='total'>{'할일 ' + todoTotal.length + '개 남음'}</div>
 			<TodoInsert onInsert={onInsert} />
-			<TodoList items={items} setItems={setItems} />
+			<TodoList items={items} onRemove={onRemove} onToggle={onToggle} />
 		</TodoTemplate>
 	);
 }
