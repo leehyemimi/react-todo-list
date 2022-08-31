@@ -1,5 +1,5 @@
 .TodoListItem {
-	border-top: 1px solid #eee;
+	//border-top: 1px solid #eee;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -10,5 +10,14 @@
 			color: #999;
 			text-decoration: line-through;
 		}
+	}
+}
+
+.TodoListItem-virtualized {
+	& + & {
+		border-top: 1px solid #dee2e6;
+	}
+	&:nth-child(even) {
+		background: #f8f9fa;
 	}
 }

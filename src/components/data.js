@@ -19,7 +19,7 @@
 
 function data() {
 	const array = [];
-	for (let i = 1; i <= 5; i++) {
+	for (let i = 1; i <= 1000; i++) {
 		array.push({
 			id: i,
 			text: `할 일 ${i}`,
