@@ -10,6 +10,7 @@ import './App.scss';
 function App() {
 	const [todos, setTodos] = useState(data);
 	const todoTotal = todos.filter(todo => todo.checked == false);
+	const doneTotal = todos.filter(todo => todo.checked == true);
 
 	//고유값으로 사용될 id
 	// redf를 사용하여 변수 담기
@@ -49,11 +50,11 @@ function App() {
 		<TodoTemplate>
 			<div className='total'>{'할일 ' + todoTotal.length + '개 남음'}</div>
 			<TodoInsert onInsert={onInsert} />
-			<TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
+			<TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} checkedList={false} />
+			<div className='total'>{'완료(' + doneTotal.length + '개)'}</div>
+			<TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} checkedList={true} />
 		</TodoTemplate>
 	);
 }
-
-
 
 export default App;

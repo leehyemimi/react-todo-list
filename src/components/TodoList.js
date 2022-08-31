@@ -6,10 +6,12 @@ import TodoListItem from './TodoListItem';
 import './TodoList.scss';
 
 //TodoList
-function TodoList({ todos, onRemove, onToggle }) {
+function TodoList({ todos, onRemove, onToggle, checkedList }) {
 	const rowRenderer = useCallback(
 		({ index, key, style }) => {
 			const todo = todos[index];
+			if (checkedList !== todo.checked) return null;
+
 			return (
 				<TodoListItem
 					todo={todo}
@@ -26,7 +28,7 @@ function TodoList({ todos, onRemove, onToggle }) {
 		<List
 			className='TodoList'
 			width={512} // 전체 크기
-			height={513} // 전체 높이
+			height={300} // 전체 높이
 			rowCount={todos.length} // 항목 개수
 			rowHeight={45} // 항목 높이
 			rowRenderer={rowRenderer} // 항목을 렌더링할 때 쓰는 함수
